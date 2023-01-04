@@ -1,0 +1,22 @@
+{
+    "test1": [
+    {
+    "deployments": ["nginx-deployment", "nginx-deployment"],
+    "namespace": "default"
+    },
+    {
+    "deployments": ["nginx-deployment", "nginx-deployment"],
+    "namespace": "default"
+    }
+],
+"test2": [
+    {
+    "deployments": ["nginx-deployment", "nginx-deployment"],
+    "namespace": "default3"
+    },
+    {
+    "deployments": ["nginx-deployment", "nginx-deployment"],
+    "namespace": "default4"
+    }
+]
+}

@@ -1,0 +1,29 @@
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: webhooksa
+  namespace: default
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: default
+  name: webhookrole
+rules:
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["patch"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: webhookbinding
+  namespace: default
+subjects:
+- kind: ServiceAccount
+  name: webhooksa
+  namespace: default
+roleRef:
+  kind: Role
+  name: webhookrole
+  apiGroup: rbac.authorization.k8s.io
