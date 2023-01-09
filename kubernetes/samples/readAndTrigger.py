@@ -52,7 +52,7 @@ def process_data(webhook_data):
         logging.error("Could not find data.json file: {}".format(e))
         return
     
-    
+
     if object_name in deployment_data:
         # Iterate through the deployments and namespace
                 for item in deployment_data[object_name]:
@@ -91,7 +91,6 @@ if __name__ == '__main__':
     # Start the webhook server
     # config.load_kube_config()
     config.load_incluster_config()
-    # Enter name of deployment and "namespace"
     server = http.server.HTTPServer(('0.0.0.0', 8000), WebhookHandler)
     logging.info('Starting server at http://0.0.0.0:8000')
     server.serve_forever()
